@@ -19,7 +19,7 @@ public class SupervisorArea extends Encargado {
 						"la persona " + excusa.getEmpleado().getNombre() + " tiene luz?");
 			} else if (excusa.getTipoExcusa().equals(TipoExcusa.CUIDADO_FAMILIAR)) {
 				new EmailSender().enviarEmail(this.getEmail(),
-						excusa.getEmpleado().getEmail(),"tas bien?",
+						excusa.getEmpleado().getEmail(),"tas bn¿",
 						"tu familia ta bien?");
 			}
 		

@@ -24,7 +24,7 @@ classDiagram
     class EncargadoDefault
     class Recepcionista
     class SupervisorArea
-
+    class GerenteRRHH
     class Excusa
 
     class ModoNormal
@@ -43,6 +43,7 @@ classDiagram
     IEncargado <|.. Encargado
 
     Encargado <|-- CEO
+	Encargado <|-- GerenteRRHH
     Encargado <|-- Recepcionista
     Encargado <|-- SupervisorArea
     Encargado <|-- EncargadoDefault
