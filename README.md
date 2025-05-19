@@ -1,4 +1,4 @@
-´´´mermaid
+```mermaid
 classDiagram
     %% Interfaces
     class IEmpleado
@@ -60,4 +60,4 @@ classDiagram
 
     ProntuarioObserver --> ProntuarioObject
     CEO ..|> ProntuarioObserver
-´´´
+```
