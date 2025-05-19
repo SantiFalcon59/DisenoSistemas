@@ -1,0 +1,12 @@
+package com.santifalocn.tp1.excusa;
+
+public enum TipoExcusa {
+
+	QUEDARSE_DORMIDO,
+	PERDIDA_TRANSPORTE,
+	PERDIDA_SUMINISTRO,
+	CUIDADO_FAMILIAR,
+	IRRELEVANTE,
+	INVEROSIMIL,
+	
+}
