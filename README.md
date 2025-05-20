@@ -61,8 +61,14 @@ classDiagram
     IExcusa <|.. Excusa
 
     Excusa <|.. ComplejaExcusa
-
-
+    Excusa <|.. InverosimilExcusa
+    Excusa <|.. ModeradaExcusa
+    Excusa <|.. TrivialExcusa
+	
+    TrivialExcusa <|.. DormidoExcusa
+    TrivialExcusa <|.. TransporteExcusa
+    ModeradaExcusa <|.. CorteLuzMasivoExcusa
+    ModeradaExcusa <|.. CuidarFamiliarExcusa
 
     ModoAccion <|.. ModoNormal
     ModoAccion <|.. ModoProductivo
