@@ -1,7 +1,7 @@
 package com.santifalcon.tp1.empleado;
 
-import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.ManejadorExcusas;
+import com.santifalcon.tp1.excusa.abstractas.Excusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public abstract class Encargado extends Empleado implements ManejadorExcusas,IEncargado {
@@ -25,9 +25,13 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	}
 	
 	@Override
-	public void manejarExcusa(Excusa excusa) {
+    public void revisarExcusa(Excusa excusa) {
 		modoAccion.accionar(this, excusa);
 	}
+	
+    public void manejarExcusa(Excusa excusa) {
+    	excusa.accion(this);
+    }
 	
 	@Override
 	public void pasar(Excusa excusa) {

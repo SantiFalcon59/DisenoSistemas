@@ -1,6 +1,6 @@
 package com.santifalcon.tp1.empleado;
 
-import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.abstractas.Excusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public class EncargadoDefault extends Encargado {

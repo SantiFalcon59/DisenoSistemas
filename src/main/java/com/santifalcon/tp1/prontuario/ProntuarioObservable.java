@@ -3,11 +3,11 @@ package com.santifalcon.tp1.prontuario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProntuarioObject implements Observable<ProntuarioObserver,Prontuario> {
+public class ProntuarioObservable implements Observable<ProntuarioObserver,Prontuario> {
  
 	private List<ProntuarioObserver> observers;
 	
-	public ProntuarioObject() {
+	public ProntuarioObservable() {
 		this.observers = new ArrayList<ProntuarioObserver>();
 		
 	}

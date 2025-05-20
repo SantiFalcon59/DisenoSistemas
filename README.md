@@ -25,8 +25,18 @@ classDiagram
     class Recepcionista
     class SupervisorArea
     class GerenteRRHH
-    class Excusa
 
+    class Excusa
+    class ComplejaExcusa 
+    class InverosimilExcusa
+	class ModeradaExcusa
+	class TrivialExcusa
+	class CorteLuzExcusa
+	class CorteLuzMasivoExcusa
+	class CuidarFamiliarExcusa
+	class DormidoExcusa
+	class TransporteExcusa
+	
     class ModoNormal
     class ModoProductivo
     class ModoVago
@@ -49,6 +59,10 @@ classDiagram
     Encargado <|-- EncargadoDefault
 
     IExcusa <|.. Excusa
+
+    Excusa <|.. ComplejaExcusa
+
+
 
     ModoAccion <|.. ModoNormal
     ModoAccion <|.. ModoProductivo

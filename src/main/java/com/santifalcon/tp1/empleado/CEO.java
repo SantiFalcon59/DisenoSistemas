@@ -1,30 +1,16 @@
 package com.santifalcon.tp1.empleado;
 
 import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.TipoExcusa;
+import com.santifalcon.tp1.excusa.abstractas.Excusa;
+import com.santifalcon.tp1.excusa.abstractas.InverosimilExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
-import com.santifalcon.tp1.prontuario.AdministradorProntuarios;
 import com.santifalcon.tp1.prontuario.Prontuario;
 import com.santifalcon.tp1.prontuario.ProntuarioObserver;
 
 public class CEO extends Encargado implements ProntuarioObserver {
 
-	private AdministradorProntuarios administradorProntuarios;
-	public CEO(String nombre, String email, int legajo, ModoAccion modoAccion, AdministradorProntuarios administradorProntuarios) {
+	public CEO(String nombre, String email, int legajo, ModoAccion modoAccion) {
 		super(nombre, email, legajo,modoAccion);
-		this.administradorProntuarios = administradorProntuarios;
-	}
-
-	@Override
-	public void manejarExcusa(Excusa excusa) {
-			new EmailSender().enviarEmail(this.getEmail(),
-					excusa.getEmpleado().getEmail(),"respuesta",
-					"aprobado por creatividad");
-			Prontuario prontuario = new Prontuario(excusa.getEmpleado(),this, excusa);
-			this.administradorProntuarios.agregarProntuario(prontuario);
-			this.administradorProntuarios.notificarAll(prontuario);
-			
 	}
 
 	@Override
@@ -35,7 +21,7 @@ public class CEO extends Encargado implements ProntuarioObserver {
 	
 	  @Override
 		public boolean puedeManejar(Excusa excusa) {
-	        return excusa.getTipoExcusa().equals(TipoExcusa.INVEROSIMIL);
+	        return excusa instanceof InverosimilExcusa;
 	    }
 
 

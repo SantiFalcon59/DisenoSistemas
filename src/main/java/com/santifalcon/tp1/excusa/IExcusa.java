@@ -1,10 +1,10 @@
 package com.santifalcon.tp1.excusa;
 
 import com.santifalcon.tp1.empleado.Empleado;
+import com.santifalcon.tp1.empleado.Encargado;
 
 public interface IExcusa {
 	
 	public Empleado getEmpleado();
-	public TipoExcusa getTipoExcusa();
-
+	public void accion(Encargado encargado);
 }

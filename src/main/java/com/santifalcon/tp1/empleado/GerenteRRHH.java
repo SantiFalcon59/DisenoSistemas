@@ -1,8 +1,7 @@
 package com.santifalcon.tp1.empleado;
 
-import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.TipoExcusa;
+import com.santifalcon.tp1.excusa.abstractas.Excusa;
+import com.santifalcon.tp1.excusa.abstractas.InverosimilExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public class GerenteRRHH extends Encargado {
@@ -13,16 +12,7 @@ public class GerenteRRHH extends Encargado {
 	
     @Override
 	public boolean puedeManejar(Excusa excusa) {
-        return excusa.getTipoExcusa().equals(TipoExcusa.INVEROSIMIL);
+        return excusa instanceof InverosimilExcusa;
     }
-
-	@Override
-	public void manejarExcusa(Excusa excusa) {
-		new EmailSender().enviarEmail(this.getEmail(),
-				excusa.getEmpleado().getEmail(),"motivo demora",
-				"la licencia fue aceptada");
-	}
-
-
 
 }
