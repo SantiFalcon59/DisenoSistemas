@@ -32,7 +32,6 @@ classDiagram
 	class ModeradaExcusa
 	class TrivialExcusa
 	class CorteLuzExcusa
-	class CorteLuzMasivoExcusa
 	class CuidarFamiliarExcusa
 	class DormidoExcusa
 	class TransporteExcusa
@@ -67,7 +66,7 @@ classDiagram
 	
     TrivialExcusa <|.. DormidoExcusa
     TrivialExcusa <|.. TransporteExcusa
-    ModeradaExcusa <|.. CorteLuzMasivoExcusa
+    ModeradaExcusa <|.. CorteLuzExcusa
     ModeradaExcusa <|.. CuidarFamiliarExcusa
 
     ModoAccion <|.. ModoNormal
