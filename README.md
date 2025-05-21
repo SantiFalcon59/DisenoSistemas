@@ -124,28 +124,24 @@ classDiagram
 %% Diagrama de Casos de Uso
 %% Representa interacciones principales entre los actores y el sistema
 
-```mermaid
-%% Diagrama de Casos de Uso - Sistema de Gestión de Excusas
-%% Usando la sintaxis estándar de Mermaid
+```flowchart
+flowchart TD
+  subgraph Actores
+    Empleado
+    Encargado
+    CEO
+  end
 
-%% Los actores van con `actor` y los casos de uso con paréntesis
-
-%% Declaración de actores
-actor Empleado
-actor Encargado
-actor CEO
-
-%% Relaciones entre actores y casos de uso
-Empleado --> (Enviar excusa)
-(Enviar excusa) --> (Procesar excusa)
-Encargado --> (Procesar excusa)
-(Procesar excusa) --> (Delegar a siguiente encargado)
-(Procesar excusa) --> (Evaluar excusa según modo de acción)
-(Procesar excusa) --> (Registrar en prontuario)
-(Registrar en prontuario) --> (Notificar observadores)
-(Notificar observadores) --> (Recibir notificación de prontuario)
-CEO --> (Recibir notificación de prontuario)
-CEO --> (Consultar prontuario)
-Encargado --> (Cambiar modo de acción)
+  Empleado --> EnviarExcusa
+  EnviarExcusa --> ProcesarExcusa
+  Encargado --> ProcesarExcusa
+  ProcesarExcusa --> Delegar
+  ProcesarExcusa --> EvaluarModo
+  ProcesarExcusa --> RegistrarProntuario
+  RegistrarProntuario --> Notificar
+  Notificar --> NotificacionCEO
+  CEO --> NotificacionCEO
+  CEO --> ConsultarProntuario
+  Encargado --> CambiarModo
 
 ```
