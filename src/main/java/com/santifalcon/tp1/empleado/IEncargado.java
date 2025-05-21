@@ -7,4 +7,7 @@ public interface IEncargado {
 
 	public ModoAccion getModoAccion();
 	public void pasar(Excusa excusa);
+	public void modoNormal();
+	public void modoVago();
+	public void modoProductivo();
 }

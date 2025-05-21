@@ -3,6 +3,9 @@ package com.santifalcon.tp1.empleado;
 import com.santifalcon.tp1.excusa.ManejadorExcusas;
 import com.santifalcon.tp1.excusa.abstractas.Excusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
+import com.santifalcon.tp1.modoaccion.ModoNormal;
+import com.santifalcon.tp1.modoaccion.ModoProductivo;
+import com.santifalcon.tp1.modoaccion.ModoVago;
 
 public abstract class Encargado extends Empleado implements ManejadorExcusas,IEncargado {
 
@@ -37,8 +40,23 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	public void pasar(Excusa excusa) {
         if (siguiente != null)  siguiente.manejarExcusa(excusa);
             System.out.println("Excusa rechazada: necesitamos pruebas contundentes");
-        
     }
 
+	
+	@Override
+	public void modoNormal() {
+		this.modoAccion = new ModoNormal();
+	}
+	
+	@Override
+	public void modoProductivo() {
+		this.modoAccion = new ModoProductivo();
+	}
+	
+	@Override
+	public void modoVago() {
+		this.modoAccion = new ModoVago();
+	}
+	
 	
 }

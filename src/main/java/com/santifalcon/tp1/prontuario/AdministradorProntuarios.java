@@ -7,17 +7,17 @@ public class AdministradorProntuarios {
 
 	private List<Prontuario> prontuarios;
 	
-	private AdministradorProntuarios administradorProntuarios;
+	private static AdministradorProntuarios administradorProntuarios;
 	
 	private AdministradorProntuarios() {
 		this.prontuarios = new ArrayList<Prontuario>();
 	}
 	
-	public AdministradorProntuarios getInstance() {
-		if (this.administradorProntuarios==null) {
-			this.administradorProntuarios = new AdministradorProntuarios();
+	public static AdministradorProntuarios getInstance() {
+		if (administradorProntuarios==null) {
+			administradorProntuarios = new AdministradorProntuarios();
 		}
-		return this.administradorProntuarios;
+		return administradorProntuarios;
 	}
 	
 	public void agregarProntuario(Prontuario prontuario) {
