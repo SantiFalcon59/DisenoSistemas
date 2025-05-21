@@ -121,6 +121,4 @@ classDiagram
     CEO ..|> ProntuarioObserver
 ```
 
-## Diagrama de Casos de Uso
-
-[Ver diagrama de casos de uso](https://www.plantuml.com/plantuml/png/ZP1VIWCn4CRVSugXJ_hGAqX1WsygzWH3TXg7viyoCocAU2gFuCKakxX2Is7VPhxlzmj9Tceerd9oYGu6La4ulXaCB1ICQt5wv3AYO8OHmn4ZxUqZ4VGQIqpa70Qh0ZwFYN2eVsi9AF5_l_VFpYqIRFQiHXbX87WaDVxvBdtsxw4fwWO-7G0iXy9sUmStlfmO1MXYRZjmditSYzH0UaOk5xhENAOpwq-OsZhqWHB5TUWhHLQJ7XSOfHPhA5ndvsexkq_L-C01ft_LIUdJYlBYtLzkHsLeEVq2)
+##[Diagrama de Casos de Uso](https://www.plantuml.com/plantuml/png/ZP1VIWCn4CRVSugXJ_hGAqX1WsygzWH3TXg7viyoCocAU2gFuCKakxX2Is7VPhxlzmj9Tceerd9oYGu6La4ulXaCB1ICQt5wv3AYO8OHmn4ZxUqZ4VGQIqpa70Qh0ZwFYN2eVsi9AF5_l_VFpYqIRFQiHXbX87WaDVxvBdtsxw4fwWO-7G0iXy9sUmStlfmO1MXYRZjmditSYzH0UaOk5xhENAOpwq-OsZhqWHB5TUWhHLQJ7XSOfHPhA5ndvsexkq_L-C01ft_LIUdJYlBYtLzkHsLeEVq2)
