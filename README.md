@@ -121,27 +121,7 @@ classDiagram
     CEO ..|> ProntuarioObserver
 ```
 
-%% Diagrama de Casos de Uso
-%% Representa interacciones principales entre los actores y el sistema
+## Diagrama de Casos de Uso
 
-```flowchart
-flowchart TD
-  subgraph Actores
-    Empleado
-    Encargado
-    CEO
-  end
+![Diagrama de Casos de Uso](https://www.plantuml.com/plantuml/uml/ZP1VIWCn4CRVSugXJ_hGAqX1WsygzWH3TXg7viyoCocAU2gFuCKakxX2Is7VPhxlzmj9Tceerd9oYGu6La4ulXaCB1ICQt5wv3AYO8OHmn4ZxUqZ4VGQIqpa70Qh0ZwFYN2eVsi9AF5_l_VFpYqIRFQiHXbX87WaDVxvBdtsxw4fwWO-7G0iXy9sUmStlfmO1MXYRZjmditSYzH0UaOk5xhENAOpwq-OsZhqWHB5TUWhHLQJ7XSOfHPhA5ndvsexkq_L-C01ft_LIUdJYlBYtLzkHsLeEVq2)
 
-  Empleado --> EnviarExcusa
-  EnviarExcusa --> ProcesarExcusa
-  Encargado --> ProcesarExcusa
-  ProcesarExcusa --> Delegar
-  ProcesarExcusa --> EvaluarModo
-  ProcesarExcusa --> RegistrarProntuario
-  RegistrarProntuario --> Notificar
-  Notificar --> NotificacionCEO
-  CEO --> NotificacionCEO
-  CEO --> ConsultarProntuario
-  Encargado --> CambiarModo
-
-```
