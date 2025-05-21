@@ -68,20 +68,20 @@ classDiagram
     class Excusa
     class ComplejaExcusa 
     class InverosimilExcusa
-	class ModeradaExcusa
-	class TrivialExcusa
-	class CorteLuzExcusa
-	class CuidarFamiliarExcusa
-	class DormidoExcusa
-	class TransporteExcusa
-	
+    class ModeradaExcusa
+    class TrivialExcusa
+    class CorteLuzExcusa
+    class CuidarFamiliarExcusa
+    class DormidoExcusa
+    class TransporteExcusa
+
     class ModoNormal
     class ModoProductivo
     class ModoVago
 
     class AdministradorProntuarios
     class Prontuario
-    class ProntuarioObject
+    class ProntuarioObservable
     class ProntuarioObserver
 
     %% Herencias / Implementaciones
@@ -91,34 +91,35 @@ classDiagram
     IEncargado <|.. Encargado
 
     Encargado <|-- CEO
-	Encargado <|-- GerenteRRHH
+    Encargado <|-- GerenteRRHH
     Encargado <|-- Recepcionista
     Encargado <|-- SupervisorArea
     Encargado <|-- EncargadoDefault
 
     IExcusa <|.. Excusa
 
-    Excusa <|.. ComplejaExcusa
-    Excusa <|.. InverosimilExcusa
-    Excusa <|.. ModeradaExcusa
-    Excusa <|.. TrivialExcusa
-	
-    TrivialExcusa <|.. DormidoExcusa
-    TrivialExcusa <|.. TransporteExcusa
-    ModeradaExcusa <|.. CorteLuzExcusa
-    ModeradaExcusa <|.. CuidarFamiliarExcusa
+    Excusa <|-- ComplejaExcusa
+    Excusa <|-- InverosimilExcusa
+    Excusa <|-- ModeradaExcusa
+    Excusa <|-- TrivialExcusa
 
-    ModoAccion <|.. ModoNormal
-    ModoAccion <|.. ModoProductivo
-    ModoAccion <|.. ModoVago
+    TrivialExcusa <|-- DormidoExcusa
+    TrivialExcusa <|-- TransporteExcusa
+    ModeradaExcusa <|-- CorteLuzExcusa
+    ModeradaExcusa <|-- CuidarFamiliarExcusa
 
-    Observable~ProntuarioObserver, Prontuario~ <|.. ProntuarioObject
-    ProntuarioObject <|-- AdministradorProntuarios
+    ModoAccion <|-- ModoNormal
+    ModoAccion <|-- ModoProductivo
+    ModoAccion <|-- ModoVago
+
+    Prontuario <|-- AdministradorProntuarios
     IProntuario <|.. Prontuario
-    CEO *-- AdministradorProntuarios
 
-    ProntuarioObserver --> ProntuarioObject
+    %% Observer pattern
+    Prontuario <|-- ProntuarioObservable
+    ProntuarioObservable <|.. Observable~ProntuarioObserver, Prontuario~
     CEO ..|> ProntuarioObserver
+    ProntuarioObserver --> ProntuarioObservable
 ```
 
 ## [Diagrama de Casos de Uso](https://www.plantuml.com/plantuml/png/ZP1VIWCn4CRVSugXJ_hGAqX1WsygzWH3TXg7viyoCocAU2gFuCKakxX2Is7VPhxlzmj9Tceerd9oYGu6La4ulXaCB1ICQt5wv3AYO8OHmn4ZxUqZ4VGQIqpa70Qh0ZwFYN2eVsi9AF5_l_VFpYqIRFQiHXbX87WaDVxvBdtsxw4fwWO-7G0iXy9sUmStlfmO1MXYRZjmditSYzH0UaOk5xhENAOpwq-OsZhqWHB5TUWhHLQJ7XSOfHPhA5ndvsexkq_L-C01ft_LIUdJYlBYtLzkHsLeEVq2)

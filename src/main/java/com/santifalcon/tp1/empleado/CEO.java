@@ -21,5 +21,11 @@ public class CEO extends Encargado implements ProntuarioObserver {
 	    }
 
 
+	@Override
+	public void update(Prontuario prontuario) {
+		new EmailSender().enviarEmail(getEmail(),prontuario.getEncargado().getEmail(),"nuevo prontario", "prontuario para: " + prontuario.getEmpleado().getNombre());
+	}
+
+
 	
 }
