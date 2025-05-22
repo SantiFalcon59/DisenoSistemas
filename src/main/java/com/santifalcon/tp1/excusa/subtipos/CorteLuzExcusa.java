@@ -1,9 +1,8 @@
-package com.santifalcon.tp1.excusa;
+package com.santifalcon.tp1.excusa.subtipos;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.Encargado;
-import com.santifalcon.tp1.excusa.abstractas.ModeradaExcusa;
 
 public class CorteLuzExcusa extends ModeradaExcusa {
 

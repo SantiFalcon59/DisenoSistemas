@@ -1,8 +1,8 @@
 package com.santifalcon.tp1.empleado;
 
 import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.excusa.abstractas.Excusa;
-import com.santifalcon.tp1.excusa.abstractas.InverosimilExcusa;
+import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.subtipos.InverosimilExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.prontuario.Prontuario;
 import com.santifalcon.tp1.prontuario.ProntuarioObserver;
@@ -25,6 +25,8 @@ public class CEO extends Encargado implements ProntuarioObserver {
 	public void update(Prontuario prontuario) {
 		new EmailSender().enviarEmail(getEmail(),prontuario.getEncargado().getEmail(),"nuevo prontario", "prontuario para: " + prontuario.getEmpleado().getNombre());
 	}
+
+
 
 
 	

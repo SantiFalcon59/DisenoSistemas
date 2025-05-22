@@ -1,8 +1,8 @@
 package com.santifalcon.tp1.empleado;
 
 
-import com.santifalcon.tp1.excusa.abstractas.Excusa;
-import com.santifalcon.tp1.excusa.abstractas.ModeradaExcusa;
+import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.subtipos.ModeradaExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public class SupervisorArea extends Encargado {

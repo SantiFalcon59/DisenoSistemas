@@ -1,7 +1,7 @@
 package com.santifalcon.tp1.empleado;
 
+import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.ManejadorExcusas;
-import com.santifalcon.tp1.excusa.abstractas.Excusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.modoaccion.ModoNormal;
 import com.santifalcon.tp1.modoaccion.ModoProductivo;
@@ -28,18 +28,22 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	}
 	
 	@Override
-    public void revisarExcusa(Excusa excusa) {
+    public void evaluarExcusa(Excusa excusa) {
 		modoAccion.accionar(this, excusa);
 	}
 	
     public void manejarExcusa(Excusa excusa) {
-    	excusa.accion(this);
+    	if (puedeManejar(excusa) ) {
+    		excusa.accion(this);
+    	} else {
+    		pasarExcusa(excusa);
+    	}
+    
     }
 	
 	@Override
-	public void pasar(Excusa excusa) {
-        if (siguiente != null)  siguiente.manejarExcusa(excusa);
-            System.out.println("Excusa rechazada: necesitamos pruebas contundentes");
+	public void pasarExcusa(Excusa excusa) {
+        if (siguiente != null)  siguiente.evaluarExcusa(excusa);
     }
 
 	
