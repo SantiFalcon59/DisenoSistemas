@@ -28,6 +28,46 @@ public class CEO extends Encargado implements ProntuarioObserver {
 
 
 
+	@Override
+	public boolean isGerenteRRHH() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	public boolean isRecepcionista() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	public boolean isSupervisorArea() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	public boolean isEncargadoDefault() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	public boolean isCEO() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
+
 
 	
 }

@@ -4,6 +4,7 @@ import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.Encargado;
 import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.ManejadorExcusas;
 
 public class InverosimilExcusa extends Excusa {
 
@@ -16,6 +17,11 @@ public class InverosimilExcusa extends Excusa {
 		new EmailSender().enviarEmail(encargado.getEmail(),
 				getEmpleado().getEmail(),"respuesta",
 				"aprobado por creatividad");
+	}
+
+	@Override
+	public boolean puedeSerManejadaPor(ManejadorExcusas manejadorExcusas) {
+		return manejadorExcusas.isCEO();
 	}
 
 }

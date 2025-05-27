@@ -6,4 +6,9 @@ public interface ManejadorExcusas {
     void pasarExcusa(Excusa excusa);
     void setSiguiente(ManejadorExcusas siguiente);
 	boolean puedeManejar(Excusa excusa);
-}
+	boolean isGerenteRRHH();
+	boolean isRecepcionista();
+	boolean isSupervisorArea();
+	boolean isEncargadoDefault();
+	boolean isCEO();
+	}

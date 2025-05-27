@@ -1,7 +1,6 @@
 package com.santifalcon.tp1.empleado;
 
 import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.subtipos.InverosimilExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public class GerenteRRHH extends Encargado {
@@ -12,7 +11,37 @@ public class GerenteRRHH extends Encargado {
 	
     @Override
 	public boolean puedeManejar(Excusa excusa) {
-        return excusa instanceof InverosimilExcusa;
+    	 return excusa.puedeSerManejadaPor(this);
     }
+
+	@Override
+	public boolean isGerenteRRHH() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isRecepcionista() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isSupervisorArea() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEncargadoDefault() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCEO() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

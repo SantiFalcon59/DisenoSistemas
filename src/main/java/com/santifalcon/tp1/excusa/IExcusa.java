@@ -7,4 +7,5 @@ public interface IExcusa {
 	
 	public Empleado getEmpleado();
 	public void accion(Encargado encargado);
+	public boolean puedeSerManejadaPor(ManejadorExcusas manejadorExcusas);
 }

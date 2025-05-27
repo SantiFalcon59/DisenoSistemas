@@ -4,6 +4,7 @@ import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.Encargado;
 import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.ManejadorExcusas;
 
 public class CuidarFamiliarExcusa extends Excusa {
 
@@ -16,6 +17,11 @@ public class CuidarFamiliarExcusa extends Excusa {
 		new EmailSender().enviarEmail(encargado.getEmail(),
 				getEmpleado().getEmail(),"tas bn¿",
 				"tu familia ta bien?");
+	}
+
+	@Override
+	public boolean puedeSerManejadaPor(ManejadorExcusas manejadorExcusas) {
+		return manejadorExcusas.isSupervisorArea();
 	}
 
 }

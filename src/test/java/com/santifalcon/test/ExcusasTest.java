@@ -8,7 +8,6 @@ import com.santifalcon.tp1.empleado.GerenteRRHH;
 import com.santifalcon.tp1.empleado.Recepcionista;
 import com.santifalcon.tp1.empleado.SupervisorArea;
 import com.santifalcon.tp1.excusa.subtipos.CorteLuzExcusa;
-import com.santifalcon.tp1.excusa.subtipos.DormidoExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.modoaccion.ModoNormal;
 import com.santifalcon.tp1.modoaccion.ModoVago;
@@ -25,7 +24,6 @@ public class ExcusasTest {
     private GerenteRRHH gerente;
     private CEO ceo;
     private ModoAccion modoNormal;
-    private DormidoExcusa excusaTrivial;
     private CorteLuzExcusa excusaModerada;
     private AdministradorProntuarios administrador;
 
