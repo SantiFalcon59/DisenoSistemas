@@ -1,4 +1,6 @@
-package com.santifalcon.tp1.excusa;
+package com.santifalcon.tp1.excusa.interfaces;
+
+import com.santifalcon.tp1.excusa.Excusa;
 
 public interface ManejadorExcusas {
     void evaluarExcusa(Excusa excusa);

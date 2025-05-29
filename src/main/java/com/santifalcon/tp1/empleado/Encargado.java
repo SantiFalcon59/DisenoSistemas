@@ -1,7 +1,8 @@
 package com.santifalcon.tp1.empleado;
 
+import com.santifalcon.tp1.empleado.interfaces.IEncargado;
 import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.ManejadorExcusas;
+import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.modoaccion.ModoNormal;
 import com.santifalcon.tp1.modoaccion.ModoProductivo;

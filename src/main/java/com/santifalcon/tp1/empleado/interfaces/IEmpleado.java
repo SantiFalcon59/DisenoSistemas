@@ -1,4 +1,4 @@
-package com.santifalcon.tp1.empleado;
+package com.santifalcon.tp1.empleado.interfaces;
 
 public interface IEmpleado {
 

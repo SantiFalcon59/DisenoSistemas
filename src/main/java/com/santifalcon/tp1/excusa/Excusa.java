@@ -1,6 +1,7 @@
 package com.santifalcon.tp1.excusa;
 
 import com.santifalcon.tp1.empleado.Empleado;
+import com.santifalcon.tp1.excusa.interfaces.IExcusa;
 
 public abstract class Excusa implements IExcusa {
 

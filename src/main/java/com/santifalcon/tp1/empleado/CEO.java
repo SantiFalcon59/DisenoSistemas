@@ -2,10 +2,10 @@ package com.santifalcon.tp1.empleado;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.subtipos.InverosimilExcusa;
+import com.santifalcon.tp1.excusa.InverosimilExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.prontuario.Prontuario;
-import com.santifalcon.tp1.prontuario.ProntuarioObserver;
+import com.santifalcon.tp1.prontuario.interfaces.ProntuarioObserver;
 
 public class CEO extends Encargado implements ProntuarioObserver {
 

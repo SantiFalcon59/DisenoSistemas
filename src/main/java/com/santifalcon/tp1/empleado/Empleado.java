@@ -1,5 +1,7 @@
 package com.santifalcon.tp1.empleado;
 
+import com.santifalcon.tp1.empleado.interfaces.IEmpleado;
+
 public class Empleado implements IEmpleado {
 
 	private String nombre;

@@ -1,4 +1,4 @@
-package com.santifalcon.tp1.prontuario;
+package com.santifalcon.tp1.prontuario.interfaces;
 
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.Encargado;

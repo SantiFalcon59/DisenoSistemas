@@ -1,5 +1,6 @@
-package com.santifalcon.tp1.prontuario;
+package com.santifalcon.tp1.prontuario.interfaces;
 
+import com.santifalcon.tp1.prontuario.Prontuario;
 
 public interface Observable<K,V> {
 

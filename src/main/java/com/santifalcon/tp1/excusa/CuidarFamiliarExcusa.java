@@ -1,10 +1,9 @@
-package com.santifalcon.tp1.excusa.subtipos;
+package com.santifalcon.tp1.excusa;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.Encargado;
-import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.ManejadorExcusas;
+import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 
 public class CuidarFamiliarExcusa extends Excusa {
 

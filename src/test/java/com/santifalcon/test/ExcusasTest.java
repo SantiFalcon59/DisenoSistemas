@@ -7,13 +7,13 @@ import com.santifalcon.tp1.empleado.CEO;
 import com.santifalcon.tp1.empleado.GerenteRRHH;
 import com.santifalcon.tp1.empleado.Recepcionista;
 import com.santifalcon.tp1.empleado.SupervisorArea;
-import com.santifalcon.tp1.excusa.subtipos.CorteLuzExcusa;
+import com.santifalcon.tp1.excusa.CorteLuzExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.modoaccion.ModoNormal;
 import com.santifalcon.tp1.modoaccion.ModoVago;
 import com.santifalcon.tp1.prontuario.AdministradorProntuarios;
 import com.santifalcon.tp1.prontuario.Prontuario;
-import com.santifalcon.tp1.prontuario.ProntuarioObserver;
+import com.santifalcon.tp1.prontuario.interfaces.ProntuarioObserver;
 
 import static org.junit.jupiter.api.Assertions.*;
 

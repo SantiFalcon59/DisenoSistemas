@@ -1,26 +1,27 @@
-package com.santifalcon.tp1.excusa.subtipos;
+package com.santifalcon.tp1.excusa;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.Encargado;
-import com.santifalcon.tp1.excusa.ManejadorExcusas;
+import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 
-public class CorteLuzExcusa extends ModeradaExcusa {
+public class TrivialExcusa extends Excusa {
 
-	public CorteLuzExcusa(Empleado empleado,String mensaje) {
+	public TrivialExcusa(Empleado empleado,String mensaje) {
 		super(empleado,mensaje);
 	}
-
+	
 	@Override
 	public void accion(Encargado encargado) {
 		new EmailSender().enviarEmail(encargado.getEmail(),
-				"EDESUR@mailfake.com.ar","consulta",
-				"la persona " + getEmpleado().getNombre() + " tiene luz?");
+				getEmpleado().getEmail(),"motivo demora",
+				"la licencia fue aceptada");
 	}
-
+	
 	@Override
 	public boolean puedeSerManejadaPor(ManejadorExcusas manejadorExcusas) {
-		return manejadorExcusas.isGerenteRRHH();
+		return manejadorExcusas.isRecepcionista();
 	}
+	
 
 }
