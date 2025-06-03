@@ -73,8 +73,6 @@ classDiagram
     class TipoTrivialExcusa
     class TipoCorteLuzExcusa
     class TipoCuidarFamiliarExcusa
-    class TipoDormidoExcusa
-    class TipoTransporteExcusa
 
     class ModoNormal
     class ModoProductivo
@@ -105,8 +103,6 @@ classDiagram
     TipoExcusa <|-- TipoModeradaExcusa
     TipoExcusa <|-- TipoTrivialExcusa
 
-    TipoTrivialExcusa <|-- TipoDormidoExcusa
-    TipoTrivialExcusa <|-- TipoTransporteExcusa
     TipoModeradaExcusa <|-- TipoCorteLuzExcusa
     TipoModeradaExcusa <|-- TipoCuidarFamiliarExcusa
 
