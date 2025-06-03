@@ -66,14 +66,15 @@ classDiagram
     class GerenteRRHH
 
     class Excusa
-    class ComplejaExcusa 
-    class InverosimilExcusa
-    class ModeradaExcusa
-    class TrivialExcusa
-    class CorteLuzExcusa
-    class CuidarFamiliarExcusa
-    class DormidoExcusa
-    class TransporteExcusa
+	class TipoExcusa 
+    class TipoComplejaExcusa 
+    class TipoInverosimilExcusa
+    class TipoModeradaExcusa
+    class TipoTrivialExcusa
+    class TipoCorteLuzExcusa
+    class TipoCuidarFamiliarExcusa
+    class TipoDormidoExcusa
+    class TipoTransporteExcusa
 
     class ModoNormal
     class ModoProductivo
@@ -98,15 +99,16 @@ classDiagram
 
     IExcusa <|.. Excusa
 
-    Excusa <|-- ComplejaExcusa
-    Excusa <|-- InverosimilExcusa
-    Excusa <|-- ModeradaExcusa
-    Excusa <|-- TrivialExcusa
+	Excusa <|-- TipoExcusa
+    TipoExcusa <|-- TipoComplejaExcusa
+    Excusa <|-- TipoInverosimilExcusa
+    Excusa <|-- TipoModeradaExcusa
+    Excusa <|-- TipoTrivialExcusa
 
-    TrivialExcusa <|-- DormidoExcusa
-    TrivialExcusa <|-- TransporteExcusa
-    ModeradaExcusa <|-- CorteLuzExcusa
-    ModeradaExcusa <|-- CuidarFamiliarExcusa
+    TipoTrivialExcusa <|-- TipoDormidoExcusa
+    TipoTrivialExcusa <|-- TipoTransporteExcusa
+    TipoModeradaExcusa <|-- TipoCorteLuzExcusa
+    TipoModeradaExcusa <|-- TipoCuidarFamiliarExcusa
 
     ModoAccion <|-- ModoNormal
     ModoAccion <|-- ModoProductivo
