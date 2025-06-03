@@ -54,7 +54,7 @@ classDiagram
         +manejar(IEncargado encargado, IExcusa excusa)
     }
     class IProntuario
-    class Observable~ProntuarioObserver, Prontuario~
+    class Observable~Observer, Prontuario~
 
     %% Clases concretas
     class Empleado
@@ -82,7 +82,6 @@ classDiagram
     class AdministradorProntuarios
     class Prontuario
     class ProntuarioObservable
-    class ProntuarioObserver
 
     %% Herencias / Implementaciones
     IEmpleado <|.. Empleado

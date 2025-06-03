@@ -3,8 +3,9 @@ package com.santifalcon.tp1.prontuario;
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.encargado.Encargado;
 import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.prontuario.interfaces.IProntuario;
 
-public class Prontuario extends ProntuarioObservable {
+public class Prontuario extends ProntuarioObservable implements IProntuario {
 
 	private Encargado encargado;
 	private Empleado empleado;
