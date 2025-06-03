@@ -14,6 +14,7 @@ public class Excusa implements IExcusa {
 	
 	public Excusa(Empleado empleado,String mensaje, TipoExcusa tipoExcusa) {
 		this.empleado = empleado;
+		this.tipoExcusa = tipoExcusa;
 	}
 	
 	@Override

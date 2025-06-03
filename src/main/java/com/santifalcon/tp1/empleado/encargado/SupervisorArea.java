@@ -3,16 +3,16 @@ package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public class SupervisorArea extends Encargado {
 
-	public SupervisorArea(String nombre, String email, int legajo,ModoAccion modoAccion) {
-		super(nombre, email, legajo, modoAccion);
+	public SupervisorArea(String nombre, String email, int legajo) {
+		super(nombre, email, legajo);
 	}
 
 	@Override
 	public boolean puedeManejar(Excusa excusa) {
+    	System.out.println("Evaluando excusa por supervisor");
 		 return excusa.puedeSerManejadaPor(this);
 	}
 

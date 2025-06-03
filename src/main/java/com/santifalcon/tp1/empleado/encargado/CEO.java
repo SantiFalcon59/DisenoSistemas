@@ -2,14 +2,13 @@ package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
-import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.prontuario.Prontuario;
 import com.santifalcon.tp1.prontuario.interfaces.Observer;
 
 public class CEO extends Encargado implements Observer {
 
-	public CEO(String nombre, String email, int legajo, ModoAccion modoAccion) {
-		super(nombre, email, legajo,modoAccion);
+	public CEO(String nombre, String email, int legajo) {
+		super(nombre, email, legajo);
 	}
 
 

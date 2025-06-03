@@ -17,7 +17,7 @@ public class TipoCorteLuzExcusa extends TipoModeradaExcusa {
 
 	@Override
 	public boolean puedeSerManejadaPor(ManejadorExcusas manejadorExcusas) {
-		return manejadorExcusas.isGerenteRRHH();
+		return manejadorExcusas.isSupervisorArea();
 	}
 
 }

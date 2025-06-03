@@ -13,9 +13,9 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	private ManejadorExcusas siguiente;
 	private ModoAccion modoAccion;
 	
-	public Encargado(String nombre, String email, int legajo, ModoAccion modoAccion) {
+	public Encargado(String nombre, String email, int legajo) {
 		super(nombre, email, legajo);
-		this.modoAccion = modoAccion;
+		this.modoAccion = new ModoNormal();
 	}
 	
 	@Override

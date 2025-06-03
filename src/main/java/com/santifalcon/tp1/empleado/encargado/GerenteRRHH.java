@@ -2,12 +2,11 @@ package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
-import com.santifalcon.tp1.modoaccion.ModoAccion;
 
 public class GerenteRRHH extends Encargado {
 
-	public GerenteRRHH(String nombre, String email, int legajo,ModoAccion modoAccion) {
-		super(nombre, email, legajo,modoAccion);
+	public GerenteRRHH(String nombre, String email, int legajo) {
+		super(nombre, email, legajo);
 	}
 	
    
@@ -46,8 +45,6 @@ public class GerenteRRHH extends Encargado {
 		new EmailSender().enviarEmail(getEmail(),
 				empleado.getEmail(),"excusa",
 			"aprobado");
-	
-		
 	}
 
 }
