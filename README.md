@@ -101,9 +101,9 @@ classDiagram
 
 	Excusa <|-- TipoExcusa
     TipoExcusa <|-- TipoComplejaExcusa
-    Excusa <|-- TipoInverosimilExcusa
-    Excusa <|-- TipoModeradaExcusa
-    Excusa <|-- TipoTrivialExcusa
+    TipoExcusa <|-- TipoInverosimilExcusa
+    TipoExcusa <|-- TipoModeradaExcusa
+    TipoExcusa <|-- TipoTrivialExcusa
 
     TipoTrivialExcusa <|-- TipoDormidoExcusa
     TipoTrivialExcusa <|-- TipoTransporteExcusa
