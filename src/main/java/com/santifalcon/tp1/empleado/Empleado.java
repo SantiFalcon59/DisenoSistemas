@@ -1,6 +1,8 @@
 package com.santifalcon.tp1.empleado;
 
-import com.santifalcon.tp1.empleado.interfaces.IEmpleado;
+import com.santifalcon.tp1.empleado.encargado.IEmpleado;
+import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.tipoexcusa.TipoExcusa;
 
 public class Empleado implements IEmpleado {
 
@@ -28,6 +30,14 @@ public class Empleado implements IEmpleado {
 	public int getLegajo() {
 		return legajo;
 	}
+
+	@Override
+	public Excusa generarExcusa(String motivo, TipoExcusa tipoExcusa) {
+		Excusa excusa = new Excusa(this, motivo, tipoExcusa);
+		return excusa;
+	}
+	
+	
 
 
 	

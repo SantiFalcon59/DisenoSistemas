@@ -1,6 +1,6 @@
-package com.santifalcon.tp1.empleado;
+package com.santifalcon.tp1.empleado.encargado;
 
-import com.santifalcon.tp1.empleado.interfaces.IEncargado;
+import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
@@ -22,6 +22,12 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	public ModoAccion getModoAccion() {
 		return this.modoAccion;
 	}
+	
+	 @Override
+		public boolean puedeManejar(Excusa excusa) {
+	    	 return excusa.puedeSerManejadaPor(this);
+	    }
+
 	
 	@Override
 	public void setSiguiente(ManejadorExcusas siguiente) {

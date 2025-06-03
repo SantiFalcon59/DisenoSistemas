@@ -1,5 +1,6 @@
-package com.santifalcon.tp1.empleado;
+package com.santifalcon.tp1.empleado.encargado;
 
+import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
@@ -9,14 +10,10 @@ public class EncargadoDefault extends Encargado {
 		super(nombre, email, legajo,modoAccion);
 	}
 
-	@Override
-	public void manejarExcusa(Excusa excusa) {
-		 System.out.println("Excusa rechazada: necesitamos pruebas contundentes");
-	}
 	
 	@Override
 	public boolean puedeManejar(Excusa excusa) {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -47,6 +44,13 @@ public class EncargadoDefault extends Encargado {
 	public boolean isCEO() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	@Override
+	public void realizarAccion(Empleado empleado) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

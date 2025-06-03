@@ -3,11 +3,11 @@ package com.santifalcon.test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.santifalcon.tp1.empleado.CEO;
-import com.santifalcon.tp1.empleado.GerenteRRHH;
-import com.santifalcon.tp1.empleado.Recepcionista;
-import com.santifalcon.tp1.empleado.SupervisorArea;
-import com.santifalcon.tp1.excusa.CorteLuzExcusa;
+import com.santifalcon.tp1.empleado.encargado.CEO;
+import com.santifalcon.tp1.empleado.encargado.GerenteRRHH;
+import com.santifalcon.tp1.empleado.encargado.Recepcionista;
+import com.santifalcon.tp1.empleado.encargado.SupervisorArea;
+import com.santifalcon.tp1.excusa.tipoexcusa.TipoCorteLuzExcusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.modoaccion.ModoNormal;
 import com.santifalcon.tp1.modoaccion.ModoVago;
@@ -24,7 +24,7 @@ public class ExcusasTest {
     private GerenteRRHH gerente;
     private CEO ceo;
     private ModoAccion modoNormal;
-    private CorteLuzExcusa excusaModerada;
+    private TipoCorteLuzExcusa excusaModerada;
     private AdministradorProntuarios administrador;
 
     

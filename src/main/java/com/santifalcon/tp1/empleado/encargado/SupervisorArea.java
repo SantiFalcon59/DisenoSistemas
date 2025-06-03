@@ -1,18 +1,20 @@
-package com.santifalcon.tp1.empleado;
+package com.santifalcon.tp1.empleado.encargado;
 
+
+import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 
-public class Recepcionista extends Encargado {
+public class SupervisorArea extends Encargado {
 
-	public Recepcionista(String nombre, String email, int legajo,ModoAccion modoAccion) {
-		super(nombre, email, legajo,modoAccion);
+	public SupervisorArea(String nombre, String email, int legajo,ModoAccion modoAccion) {
+		super(nombre, email, legajo, modoAccion);
 	}
-	
-    @Override
+
+	@Override
 	public boolean puedeManejar(Excusa excusa) {
-     return excusa.puedeSerManejadaPor(this);
-    }
+		 return excusa.puedeSerManejadaPor(this);
+	}
 
 	@Override
 	public boolean isGerenteRRHH() {
@@ -23,13 +25,13 @@ public class Recepcionista extends Encargado {
 	@Override
 	public boolean isRecepcionista() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isSupervisorArea() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -44,4 +46,9 @@ public class Recepcionista extends Encargado {
 		return false;
 	}
 
+	@Override
+	public void realizarAccion(Empleado empleado) {
+		// TODO Auto-generated method stub
+		
+	}
 }

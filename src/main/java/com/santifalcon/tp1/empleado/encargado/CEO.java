@@ -1,8 +1,7 @@
-package com.santifalcon.tp1.empleado;
+package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.InverosimilExcusa;
+import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.modoaccion.ModoAccion;
 import com.santifalcon.tp1.prontuario.Prontuario;
 import com.santifalcon.tp1.prontuario.interfaces.ProntuarioObserver;
@@ -13,12 +12,6 @@ public class CEO extends Encargado implements ProntuarioObserver {
 		super(nombre, email, legajo,modoAccion);
 	}
 
-	
-	
-	  @Override
-		public boolean puedeManejar(Excusa excusa) {
-	        return excusa instanceof InverosimilExcusa;
-	    }
 
 
 	@Override
@@ -64,6 +57,16 @@ public class CEO extends Encargado implements ProntuarioObserver {
 	public boolean isCEO() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+
+
+	@Override
+	public void realizarAccion(Empleado empleado) {
+		new EmailSender().enviarEmail(getEmail(),
+				empleado.getEmail(),"respuesta",
+				"aprobado por creatividad");
+		
 	}
 
 
