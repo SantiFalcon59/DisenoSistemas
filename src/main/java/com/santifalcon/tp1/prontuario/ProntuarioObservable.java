@@ -4,36 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.santifalcon.tp1.prontuario.interfaces.Observable;
-import com.santifalcon.tp1.prontuario.interfaces.ProntuarioObserver;
+import com.santifalcon.tp1.prontuario.interfaces.Observer;
 
-public class ProntuarioObservable implements Observable<ProntuarioObserver,Prontuario> {
+public class ProntuarioObservable implements Observable<Observer,Prontuario> {
  
-	private List<ProntuarioObserver> observers;
+	private List<Observer> observers;
 	
 	public ProntuarioObservable() {
-		this.observers = new ArrayList<ProntuarioObserver>();
+		this.observers = new ArrayList<Observer>();
 		
 	}
 	
 	@Override
-	public void agregarObserver(ProntuarioObserver obs) {
+	public void agregarObserver(Observer obs) {
 		this.observers.add(obs);
 	}
 	
 	@Override
-	public void removeObserver(ProntuarioObserver obs) {
+	public void removeObserver(Observer obs) {
 		this.observers.remove(obs);
 	}
 	
 	@Override
 	public void notificarAll(Prontuario prontuario) {
-		for (ProntuarioObserver o : this.observers) {
+		for (Observer o : this.observers) {
 			notificar(o,prontuario);
 		}
 	}
 	
 	@Override
-	public void notificar(ProntuarioObserver obs, Prontuario prontuario) {
+	public void notificar(Observer obs, Prontuario prontuario) {
 		obs.update(prontuario);
 	}
 }

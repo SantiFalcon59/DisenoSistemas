@@ -58,6 +58,7 @@ classDiagram
 
     %% Clases concretas
     class Empleado
+    class Rechazador
     class Encargado
     class CEO
     class EncargadoDefault
@@ -87,6 +88,7 @@ classDiagram
     IEmpleado <|.. Empleado
     Empleado <|-- Encargado
     ManejadorExcusas <|.. Encargado
+    ManejadorExcusas <|.. Rechazador
     IEncargado <|.. Encargado
 
     Encargado <|-- CEO
@@ -114,10 +116,10 @@ classDiagram
     IProntuario <|.. Prontuario
 
     %% Observer pattern
-    Prontuario <|-- ProntuarioObservable
-    ProntuarioObservable <|.. Observable~ProntuarioObserver, Prontuario~
-    CEO ..|> ProntuarioObserver
-    ProntuarioObserver --> ProntuarioObservable
+    ProntuarioObservable <|-- Prontuario
+    Observable~Observer, Prontuario~ <|.. ProntuarioObservable
+    CEO ..|> Observer
+    Observer --> ProntuarioObservable
 ```
 
 ## [Diagrama de Casos de Uso](https://www.plantuml.com/plantuml/png/ZP1VIWCn4CRVSugXJ_hGAqX1WsygzWH3TXg7viyoCocAU2gFuCKakxX2Is7VPhxlzmj9Tceerd9oYGu6La4ulXaCB1ICQt5wv3AYO8OHmn4ZxUqZ4VGQIqpa70Qh0ZwFYN2eVsi9AF5_l_VFpYqIRFQiHXbX87WaDVxvBdtsxw4fwWO-7G0iXy9sUmStlfmO1MXYRZjmditSYzH0UaOk5xhENAOpwq-OsZhqWHB5TUWhHLQJ7XSOfHPhA5ndvsexkq_L-C01ft_LIUdJYlBYtLzkHsLeEVq2)
