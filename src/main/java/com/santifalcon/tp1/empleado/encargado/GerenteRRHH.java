@@ -1,8 +1,5 @@
 package com.santifalcon.tp1.empleado.encargado;
 
-import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.excusa.Excusa;
-
 public class GerenteRRHH extends Encargado {
 
 	public GerenteRRHH(String nombre, String email, int legajo) {
@@ -40,11 +37,5 @@ public class GerenteRRHH extends Encargado {
 		return false;
 	}
 
-	@Override
-	public void realizarAccion(Excusa excusa) {
-		new EmailSender().enviarEmail(getEmail(),
-				excusa.getEmpleado().getEmail(),"excusa",
-			"aprobado");
-	}
 
 }

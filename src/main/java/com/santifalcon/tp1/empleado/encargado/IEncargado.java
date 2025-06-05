@@ -7,4 +7,6 @@ public interface IEncargado {
 	public void modoNormal();
 	public void modoVago();
 	public void modoProductivo();
+	public void enviarEmail(String origen, String destino, String asunto, String contenido);
+	
 }

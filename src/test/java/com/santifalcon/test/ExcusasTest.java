@@ -9,7 +9,7 @@ import com.santifalcon.tp1.empleado.encargado.EncargadoDefault;
 import com.santifalcon.tp1.empleado.encargado.GerenteRRHH;
 import com.santifalcon.tp1.empleado.encargado.Recepcionista;
 import com.santifalcon.tp1.empleado.encargado.SupervisorArea;
-import com.santifalcon.tp1.empleado.encargado.lineaencargados.ManejadoresDeExcusas;
+import com.santifalcon.tp1.empleado.encargado.lineaencargados.LineaDeManejadoresDeExcusas;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.tipoexcusa.*;
 import com.santifalcon.tp1.excusa.RechazadorExcusas;
@@ -28,7 +28,7 @@ public class ExcusasTest {
     private CEO ceo;
     private EncargadoDefault encargadoDefault;
     private RechazadorExcusas rechazador;
-    private ManejadoresDeExcusas manejadoresDeExcusas;
+    private LineaDeManejadoresDeExcusas manejadoresDeExcusas;
     private Empleado empleado;
 
     @BeforeEach
@@ -41,7 +41,7 @@ public class ExcusasTest {
         encargadoDefault = new EncargadoDefault("Julieta Perez","julieta.perez@excusas.com",458478);
         rechazador = new RechazadorExcusas();
         
-        manejadoresDeExcusas = new ManejadoresDeExcusas(recepcionista, rechazador);
+        manejadoresDeExcusas = new LineaDeManejadoresDeExcusas(recepcionista, rechazador);
         manejadoresDeExcusas.agregar(supervisor);
         manejadoresDeExcusas.agregar(gerente);
         manejadoresDeExcusas.agregar(encargadoDefault);
@@ -49,7 +49,7 @@ public class ExcusasTest {
         //ProntuarioObservable.getInstance().agregarObservador(ceo2);
         empleado = new Empleado("Juan", "juan@email.com", 1234);
     }
-/*
+
     @Test
     void testRecepcionistaAceptaExcusaTrivial() {
         Excusa excusa = new Excusa(empleado, "me quedé dormido", new TipoTrivialExcusa());
@@ -95,8 +95,9 @@ public class ExcusasTest {
 
         assertEquals(supervisor, excusa.getProcesadoPor());
     }
-*/
-    @Test
+
+    
+    //@Test
     void testCEOProcesaExcusaInverosimilYGeneraProntuarioConObservers() {
         manejadoresDeExcusas.agregar(ceo);
 

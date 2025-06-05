@@ -3,12 +3,12 @@ package com.santifalcon.tp1.empleado.encargado.lineaencargados;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 
-public class ManejadoresDeExcusas implements IManejadoresDeExcusas {
+public class LineaDeManejadoresDeExcusas implements ILineaDeManejadoresDeExcusas {
 
     private ManejadorExcusas manejadorInicial;
     private final ManejadorExcusas manejadorFinal;
 
-    public ManejadoresDeExcusas(ManejadorExcusas manejadorInicial, ManejadorExcusas manejadorFinal) {
+    public LineaDeManejadoresDeExcusas(ManejadorExcusas manejadorInicial, ManejadorExcusas manejadorFinal) {
         this.manejadorInicial = manejadorInicial;
         this.manejadorFinal = manejadorFinal;
         manejadorInicial.setSiguiente(manejadorFinal);

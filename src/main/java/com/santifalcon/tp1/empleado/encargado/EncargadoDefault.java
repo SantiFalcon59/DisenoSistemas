@@ -45,11 +45,7 @@ public class EncargadoDefault extends Encargado {
 	}
 
 
-	@Override
-	public void realizarAccion(Excusa excusa) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	
 	

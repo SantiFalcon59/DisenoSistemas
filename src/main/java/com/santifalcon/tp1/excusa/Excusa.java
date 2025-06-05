@@ -1,5 +1,4 @@
 package com.santifalcon.tp1.excusa;
-
 import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.empleado.encargado.Encargado;
 import com.santifalcon.tp1.excusa.interfaces.IExcusa;
@@ -20,7 +19,7 @@ public class Excusa implements IExcusa {
 	}
 	
 	@Override
-	public void accion(Encargado encargado) {
+	public void evaluar(Encargado encargado) {
 		tipoExcusa.accion(encargado,this);
 	}
 	
@@ -49,6 +48,11 @@ public class Excusa implements IExcusa {
 	
 	public void setProcesadoPor(ManejadorExcusas me) {
 		this.procesador = me;
+	}
+
+	@Override
+	public String[] getEmailContenido(Empleado empleado) {
+		return this.tipoExcusa.getEmailContenido(empleado);
 	}
 	
 	
