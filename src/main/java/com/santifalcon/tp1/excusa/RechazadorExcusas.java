@@ -1,7 +1,6 @@
 package com.santifalcon.tp1.excusa;
 
 import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 
 public class RechazadorExcusas implements ManejadorExcusas {
@@ -15,7 +14,7 @@ public class RechazadorExcusas implements ManejadorExcusas {
 
 	@Override
 	public void manejarExcusa(Excusa excusa) {
-		realizarAccion(excusa.getEmpleado());
+		realizarAccion(excusa);
 		
 	}
 
@@ -25,8 +24,9 @@ public class RechazadorExcusas implements ManejadorExcusas {
 	}
 
 	@Override
-	public void realizarAccion(Empleado empleado) {
-	new EmailSender().enviarEmail("rechazador@excusas.com",empleado.getEmail() , "rechazao", "Excusa rechazada: necesitamos pruebas contundentes");
+	public void realizarAccion(Excusa excusa) {
+		excusa.setProcesadoPor(this);
+	new EmailSender().enviarEmail("rechazador@excusas.com",excusa.getEmpleado().getEmail() , "rechazao", "Excusa rechazada: necesitamos pruebas contundentes");
 	}
 
 	@Override
@@ -67,6 +67,12 @@ public class RechazadorExcusas implements ManejadorExcusas {
 	public boolean isCEO() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public ManejadorExcusas getSiguiente() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

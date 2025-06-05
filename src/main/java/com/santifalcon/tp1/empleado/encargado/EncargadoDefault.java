@@ -1,6 +1,5 @@
 package com.santifalcon.tp1.empleado.encargado;
 
-import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
 
 public class EncargadoDefault extends Encargado {
@@ -47,7 +46,7 @@ public class EncargadoDefault extends Encargado {
 
 
 	@Override
-	public void realizarAccion(Empleado empleado) {
+	public void realizarAccion(Excusa excusa) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,7 +1,5 @@
 package com.santifalcon.tp1.empleado.encargado;
 
-
-import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
 
 public class SupervisorArea extends Encargado {
@@ -12,7 +10,6 @@ public class SupervisorArea extends Encargado {
 
 	@Override
 	public boolean puedeManejar(Excusa excusa) {
-    	System.out.println("Evaluando excusa por supervisor");
 		 return excusa.puedeSerManejadaPor(this);
 	}
 
@@ -47,7 +44,7 @@ public class SupervisorArea extends Encargado {
 	}
 
 	@Override
-	public void realizarAccion(Empleado empleado) {
+	public void realizarAccion(Excusa excusa) {
 		// TODO Auto-generated method stub
 		
 	}

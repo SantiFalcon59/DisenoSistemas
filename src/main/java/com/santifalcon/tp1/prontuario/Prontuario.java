@@ -16,6 +16,7 @@ public class Prontuario extends ProntuarioObservable implements IProntuario {
 		this.empleado = empleado;
 		this.encargado = encargado;
 		this.excusa = excusa;
+		this.notificarAll(this);
 	}
 	public Empleado getEmpleado() {
 		return empleado;

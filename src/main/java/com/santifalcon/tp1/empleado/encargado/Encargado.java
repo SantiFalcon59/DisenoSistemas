@@ -34,6 +34,12 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 		this.siguiente = siguiente;
 	}
 	
+	
+	@Override
+	public ManejadorExcusas getSiguiente() {
+		return this.siguiente;
+	}
+	
 	@Override
     public void evaluarExcusa(Excusa excusa) {
 		modoAccion.accionar(this, excusa);
@@ -41,6 +47,7 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	
     public void manejarExcusa(Excusa excusa) {
     	if (puedeManejar(excusa) ) {
+    		excusa.setProcesadoPor(this);
     		excusa.accion(this);
     	} else {
     		pasarExcusa(excusa);
@@ -50,6 +57,7 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	
 	@Override
 	public void pasarExcusa(Excusa excusa) {
+		System.out.println("PASANDO EXCUSA A: " + this.siguiente.toString());
         if (siguiente != null)  siguiente.evaluarExcusa(excusa);
     }
 

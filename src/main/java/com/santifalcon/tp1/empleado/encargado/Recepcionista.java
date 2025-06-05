@@ -1,7 +1,6 @@
 package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.empleado.Empleado;
 import com.santifalcon.tp1.excusa.Excusa;
 
 public class Recepcionista extends Encargado {
@@ -47,9 +46,9 @@ public class Recepcionista extends Encargado {
 	}
 
 	@Override
-	public void realizarAccion(Empleado empleado) {
+	public void realizarAccion(Excusa excusa) {
 		new EmailSender().enviarEmail(getEmail(),
-				empleado.getEmail(),"motivo demora",
+				excusa.getEmpleado().getEmail(),"motivo demora",
 				"la licencia fue aceptada");
 	}
 

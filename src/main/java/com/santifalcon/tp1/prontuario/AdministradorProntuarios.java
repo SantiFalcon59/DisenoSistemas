@@ -27,6 +27,10 @@ public class AdministradorProntuarios {
 	public void removerProntuario(Prontuario prontuario) {
 		this.prontuarios.remove(prontuario);
 	}
+
+	public List<Prontuario> getProntuarios() {
+		return this.prontuarios;
+	}
 	
 	
 	

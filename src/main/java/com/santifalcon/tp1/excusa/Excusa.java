@@ -11,15 +11,17 @@ public class Excusa implements IExcusa {
 	private Empleado empleado;
 	private String mensaje;
 	private TipoExcusa tipoExcusa;
+	private ManejadorExcusas procesador;
 	
 	public Excusa(Empleado empleado,String mensaje, TipoExcusa tipoExcusa) {
 		this.empleado = empleado;
 		this.tipoExcusa = tipoExcusa;
+		this.mensaje = mensaje;
 	}
 	
 	@Override
 	public void accion(Encargado encargado) {
-		tipoExcusa.accion(encargado,this.empleado);
+		tipoExcusa.accion(encargado,this);
 	}
 	
 	
@@ -35,11 +37,18 @@ public class Excusa implements IExcusa {
 	public TipoExcusa getTipoExcusa() {
 		return this.tipoExcusa;
 	}
-
-
+	
 	@Override
 	public boolean puedeSerManejadaPor(ManejadorExcusas manejadorExcusas) {
 		return this.tipoExcusa.puedeSerManejadaPor(manejadorExcusas);
+	}
+	
+	public ManejadorExcusas getProcesadoPor() {
+		return this.procesador;
+	}
+	
+	public void setProcesadoPor(ManejadorExcusas me) {
+		this.procesador = me;
 	}
 	
 	
