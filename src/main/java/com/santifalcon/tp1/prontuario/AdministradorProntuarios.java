@@ -3,6 +3,7 @@ package com.santifalcon.tp1.prontuario;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class AdministradorProntuarios {
 
 	private List<Prontuario> prontuarios;
@@ -31,6 +32,9 @@ public class AdministradorProntuarios {
 	public List<Prontuario> getProntuarios() {
 		return this.prontuarios;
 	}
+	
+	
+
 	
 	
 	

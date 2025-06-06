@@ -17,6 +17,7 @@ public class ProntuarioObservable implements Observable<Observer,Prontuario> {
 	
 	@Override
 	public void agregarObserver(Observer obs) {
+		System.out.println("OBSERVER AGREGADO");
 		this.observers.add(obs);
 	}
 	

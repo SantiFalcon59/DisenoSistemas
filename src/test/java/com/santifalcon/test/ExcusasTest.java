@@ -46,7 +46,6 @@ public class ExcusasTest {
         manejadoresDeExcusas.agregar(gerente);
         manejadoresDeExcusas.agregar(encargadoDefault);
         
-        //ProntuarioObservable.getInstance().agregarObservador(ceo2);
         empleado = new Empleado("Juan", "juan@email.com", 1234);
     }
 
@@ -97,17 +96,16 @@ public class ExcusasTest {
     }
 
     
-    //@Test
+    @Test
     void testCEOProcesaExcusaInverosimilYGeneraProntuarioConObservers() {
         manejadoresDeExcusas.agregar(ceo);
 
         Excusa excusa = new Excusa(empleado, "una oveja ninja me secuestró", new TipoInverosimilExcusa());
         manejadoresDeExcusas.manejarExcusa(excusa);
-
         assertEquals(ceo, excusa.getProcesadoPor());
 
         List<Prontuario> prontuarios = AdministradorProntuarios.getInstance().getProntuarios();
-
+        
         assertFalse(prontuarios.isEmpty());
         
         Prontuario generado = prontuarios.get(0);
