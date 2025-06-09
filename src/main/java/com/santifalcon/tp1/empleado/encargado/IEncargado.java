@@ -1,5 +1,5 @@
 package com.santifalcon.tp1.empleado.encargado;
-import com.santifalcon.tp1.modoaccion.ModoAccion;
+import com.santifalcon.tp1.empleado.encargado.modoaccion.ModoAccion;
 
 public interface IEncargado {
 

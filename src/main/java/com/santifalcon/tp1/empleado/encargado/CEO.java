@@ -7,37 +7,28 @@ import com.santifalcon.tp1.prontuario.Prontuario;
 import com.santifalcon.tp1.prontuario.interfaces.Observer;
 
 public class CEO extends Encargado implements Observer {
-
-	private boolean notificado;
-	
 	
 	public CEO(String nombre, String email, int legajo) {
 		super(nombre, email, legajo);
-		this.notificado = false;
+		AdministradorProntuarios.getInstance().agregarObserver(this);
 	}
 
 
 
 	@Override
 	public void update(Prontuario prontuario) {
-		this.notificado = true;
 		new EmailSender().enviarEmail(getEmail(),prontuario.getEncargado().getEmail(),"nuevo prontario", "prontuario para: " + prontuario.getEmpleado().getNombre());
 	}
 
-	public boolean isNotificado() {
-		return this.notificado;
-	}
 
 	@Override
 	public boolean isGerenteRRHH() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 
 	@Override
 	public boolean isRecepcionista() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -45,7 +36,6 @@ public class CEO extends Encargado implements Observer {
 
 	@Override
 	public boolean isSupervisorArea() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -53,7 +43,6 @@ public class CEO extends Encargado implements Observer {
 
 	@Override
 	public boolean isEncargadoDefault() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -61,7 +50,6 @@ public class CEO extends Encargado implements Observer {
 
 	@Override
 	public boolean isCEO() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
@@ -69,7 +57,7 @@ public class CEO extends Encargado implements Observer {
 
 	@Override
 	public void realizarAccion(Excusa excusa) {
-		System.out.println("ACCION DEL CEO");
+		excusa.setProcesadoPor(this);
 		this.enviarEmail(getEmail(), excusa.getEmpleado().getEmail(), "respuesta", "aprobado por creatividad");
 		Prontuario prontuario = new Prontuario(excusa.getEmpleado(), this, excusa);
 		AdministradorProntuarios.getInstance().agregarProntuario(prontuario);

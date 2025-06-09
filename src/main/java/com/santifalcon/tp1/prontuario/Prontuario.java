@@ -5,7 +5,7 @@ import com.santifalcon.tp1.empleado.encargado.Encargado;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.prontuario.interfaces.IProntuario;
 
-public class Prontuario extends ProntuarioObservable implements IProntuario {
+public class Prontuario implements IProntuario {
 
 	private Encargado encargado;
 	private Empleado empleado;
@@ -16,7 +16,6 @@ public class Prontuario extends ProntuarioObservable implements IProntuario {
 		this.empleado = empleado;
 		this.encargado = encargado;
 		this.excusa = excusa;
-		this.notificarAll(this);
 	}
 	public Empleado getEmpleado() {
 		return empleado;

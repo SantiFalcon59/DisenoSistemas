@@ -24,6 +24,6 @@ public class LineaDeManejadoresDeExcusas implements ILineaDeManejadoresDeExcusas
     }
 
     public void manejarExcusa(Excusa excusa) {
-        manejadorInicial.evaluarExcusa(excusa);
+        manejadorInicial.manejarExcusa(excusa);
     }
 }

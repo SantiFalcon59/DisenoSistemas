@@ -1,16 +1,11 @@
-package com.santifalcon.tp1.excusa;
+package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
+import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 
 public class RechazadorExcusas implements ManejadorExcusas {
 
-	
-	@Override
-	public void evaluarExcusa(Excusa excusa) {
-		manejarExcusa(excusa);
-		
-	}
 
 	@Override
 	public void manejarExcusa(Excusa excusa) {
@@ -41,37 +36,31 @@ public class RechazadorExcusas implements ManejadorExcusas {
 
 	@Override
 	public boolean isGerenteRRHH() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isRecepcionista() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isSupervisorArea() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isEncargadoDefault() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isCEO() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public ManejadorExcusas getSiguiente() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

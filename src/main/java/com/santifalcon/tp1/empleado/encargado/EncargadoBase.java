@@ -1,11 +1,12 @@
 package com.santifalcon.tp1.empleado.encargado;
 
-public class Recepcionista extends Encargado {
 
-	public Recepcionista(String nombre, String email, int legajo) {
+public class EncargadoBase extends Encargado {
+
+	public EncargadoBase(String nombre, String email, int legajo) {
 		super(nombre, email, legajo);
 	}
-	
+
 	@Override
 	public boolean isGerenteRRHH() {
 		return false;
@@ -13,7 +14,7 @@ public class Recepcionista extends Encargado {
 
 	@Override
 	public boolean isRecepcionista() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -23,7 +24,7 @@ public class Recepcionista extends Encargado {
 
 	@Override
 	public boolean isEncargadoDefault() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -32,4 +33,8 @@ public class Recepcionista extends Encargado {
 	}
 
 
+
+
+	
+	
 }

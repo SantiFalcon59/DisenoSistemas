@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AdministradorProntuarios {
+public class AdministradorProntuarios extends ProntuarioObservable  {
 
 	private List<Prontuario> prontuarios;
 	
@@ -22,6 +22,7 @@ public class AdministradorProntuarios {
 	}
 	
 	public void agregarProntuario(Prontuario prontuario) {
+		this.notificarAll(prontuario);
 		this.prontuarios.add(prontuario);
 	}
 	

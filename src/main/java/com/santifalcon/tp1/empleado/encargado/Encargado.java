@@ -2,12 +2,12 @@ package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
 import com.santifalcon.tp1.empleado.Empleado;
+import com.santifalcon.tp1.empleado.encargado.modoaccion.ModoAccion;
+import com.santifalcon.tp1.empleado.encargado.modoaccion.ModoNormal;
+import com.santifalcon.tp1.empleado.encargado.modoaccion.ModoProductivo;
+import com.santifalcon.tp1.empleado.encargado.modoaccion.ModoVago;
 import com.santifalcon.tp1.excusa.Excusa;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
-import com.santifalcon.tp1.modoaccion.ModoAccion;
-import com.santifalcon.tp1.modoaccion.ModoNormal;
-import com.santifalcon.tp1.modoaccion.ModoProductivo;
-import com.santifalcon.tp1.modoaccion.ModoVago;
 
 public abstract class Encargado extends Empleado implements ManejadorExcusas,IEncargado {
 
@@ -16,7 +16,7 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	
 	public Encargado(String nombre, String email, int legajo) {
 		super(nombre, email, legajo);
-		this.modoAccion = new ModoNormal();
+		modoNormal();
 	}
 	
 	@Override
@@ -43,6 +43,7 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	
 	@Override
 	public void realizarAccion(Excusa excusa) {
+		excusa.setProcesadoPor(this);
 		String origen = this.getEmail();
 		String asunto = excusa.getEmailContenido(excusa.getEmpleado())[0];
 		String contenido = excusa.getEmailContenido(excusa.getEmpleado())[1];
@@ -57,15 +58,9 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	    }
 
 	
-	@Override
-    public void evaluarExcusa(Excusa excusa) {
-		modoAccion.accionar(this, excusa);
-	}
-	
     public void manejarExcusa(Excusa excusa) {
     	if (puedeManejar(excusa) ) {
-    		excusa.setProcesadoPor(this);
-    		excusa.evaluar(this);
+    		this.modoAccion.evaluar(this, excusa);
     	} else {
     		pasarExcusa(excusa);
     	}
@@ -74,7 +69,7 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	
 	@Override
 	public void pasarExcusa(Excusa excusa) {
-        if (siguiente != null)  siguiente.evaluarExcusa(excusa);
+        if (siguiente != null)  siguiente.manejarExcusa(excusa);
     }
 
 	
