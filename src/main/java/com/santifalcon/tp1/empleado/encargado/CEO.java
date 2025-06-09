@@ -17,7 +17,7 @@ public class CEO extends Encargado implements Observer {
 
 	@Override
 	public void update(Prontuario prontuario) {
-		new EmailSender().enviarEmail(getEmail(),prontuario.getEncargado().getEmail(),"nuevo prontario", "prontuario para: " + prontuario.getEmpleado().getNombre());
+		new EmailSender().enviarEmail(prontuario.getEncargado().getEmail(),this.getEmail(),"nuevo prontario", "prontuario para: " + prontuario.getEmpleado().getNombre());
 	}
 
 
@@ -57,7 +57,6 @@ public class CEO extends Encargado implements Observer {
 
 	@Override
 	public void realizarAccion(Excusa excusa) {
-		excusa.setProcesadoPor(this);
 		this.enviarEmail(getEmail(), excusa.getEmpleado().getEmail(), "respuesta", "aprobado por creatividad");
 		Prontuario prontuario = new Prontuario(excusa.getEmpleado(), this, excusa);
 		AdministradorProntuarios.getInstance().agregarProntuario(prontuario);

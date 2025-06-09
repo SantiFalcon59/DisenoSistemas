@@ -20,7 +20,6 @@ public class RechazadorExcusas implements ManejadorExcusas {
 
 	@Override
 	public void realizarAccion(Excusa excusa) {
-		excusa.setProcesadoPor(this);
 	new EmailSender().enviarEmail("rechazador@excusas.com",excusa.getEmpleado().getEmail() , "rechazao", "Excusa rechazada: necesitamos pruebas contundentes");
 	}
 

@@ -43,7 +43,6 @@ public abstract class Encargado extends Empleado implements ManejadorExcusas,IEn
 	
 	@Override
 	public void realizarAccion(Excusa excusa) {
-		excusa.setProcesadoPor(this);
 		String origen = this.getEmail();
 		String asunto = excusa.getEmailContenido(excusa.getEmpleado())[0];
 		String contenido = excusa.getEmailContenido(excusa.getEmpleado())[1];

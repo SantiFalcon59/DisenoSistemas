@@ -19,6 +19,9 @@ import com.santifalcon.tp1.prontuario.Prontuario;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class ExcusasTest {
 
@@ -33,73 +36,74 @@ public class ExcusasTest {
 
     @BeforeEach
     void setUp() {
-        ceo = new CEO("Juan CEO", "juan.ceo@excusas.com",123);
+        ceo = spy(new CEO("Juan CEO", "juan.ceo@excusas.com",123));
 
-        recepcionista = new Recepcionista("Clara Hernandez", "clara.hernandez@excusas.com",5678);
-        supervisor = new SupervisorArea("Rodrigo Lopez", "rodrigo.lopez@excusas.com",6547845);
-        gerente = new GerenteRRHH("Leonardo Diaz","leonardo.dias@excusas.com",9076978);
-        encargadoDefault = new EncargadoBase("Julieta Perez","julieta.perez@excusas.com",458478);
-        rechazador = new RechazadorExcusas();
+        recepcionista = spy(new Recepcionista("Clara Hernandez", "clara.hernandez@excusas.com",5678));
+        supervisor = spy(new SupervisorArea("Rodrigo Lopez", "rodrigo.lopez@excusas.com",6547845));
+        gerente = spy(new GerenteRRHH("Leonardo Diaz","leonardo.dias@excusas.com",9076978));
+        encargadoDefault = spy(new EncargadoBase("Julieta Perez","julieta.perez@excusas.com",458478));
+        rechazador = spy(new RechazadorExcusas());
         
         manejadoresDeExcusas = new LineaDeManejadoresDeExcusas(recepcionista, rechazador);
         manejadoresDeExcusas.agregar(supervisor);
         manejadoresDeExcusas.agregar(gerente);
         manejadoresDeExcusas.agregar(encargadoDefault);
+        manejadoresDeExcusas.agregar(ceo);
         
-        empleado = new Empleado("Juan", "juan@email.com", 1234);
+        empleado = spy(new Empleado("Juan", "juan@email.com", 1234));
     }
 
     @Test
     void testRecepcionistaAceptaExcusaTrivial() {
     	Excusa excusa = empleado.generarExcusa("me quedé dormido", new TipoTrivialExcusa(), manejadoresDeExcusas);
-        assertEquals(recepcionista, excusa.getProcesadoPor());
+    	verify(recepcionista, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testSupervisorProcesaExcusaModerada() {
      Excusa excusa = empleado.generarExcusa("se cortó la luz", new TipoCorteLuzExcusa(), manejadoresDeExcusas);
-        assertEquals(supervisor, excusa.getProcesadoPor());
+ 		verify(supervisor, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testGerenteProcesaExcusaCompleja() {
         Excusa excusa = empleado.generarExcusa("una paloma robó mi bicicleta", new TipoComplejaExcusa(),manejadoresDeExcusas);
-        assertEquals(gerente, excusa.getProcesadoPor());
+    	verify(gerente, times(1)).manejarExcusa(excusa);
     }
     
     @Test
     void testRecepcionistaRechazaExcusaModeradaYLaProcesaElSupervisor() {
     	Excusa excusa= empleado.generarExcusa( "tuve que cuidar a un familiar", new TipoCuidarFamiliarExcusa(),manejadoresDeExcusas);
-        assertEquals(supervisor, excusa.getProcesadoPor());
+    	verify(supervisor, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testSupervisorModoVagoNoProcesaYLaProcesaElGerente() {
         supervisor.modoVago();
        Excusa excusa = empleado.generarExcusa("se cortó la luz", new TipoCorteLuzExcusa(),manejadoresDeExcusas);
-        assertEquals(rechazador, excusa.getProcesadoPor());
+   	verify(rechazador, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testSupervisorModoProductivoEvaluaYProcesa() {
         supervisor.modoProductivo();
        Excusa excusa= empleado.generarExcusa("tuve que cuidar a un familiar", new TipoCuidarFamiliarExcusa(),manejadoresDeExcusas);
-        assertEquals(supervisor, excusa.getProcesadoPor());
+   	verify(supervisor, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testCEOProcesaExcusaInverosimilYGeneraProntuarioConObservers() {
-        manejadoresDeExcusas.agregar(ceo);
+
        Excusa excusa = empleado.generarExcusa("una oveja ninja me secuestró", new TipoInverosimilExcusa(),manejadoresDeExcusas);
-        assertEquals(ceo, excusa.getProcesadoPor());
+       verify(ceo, times(1)).manejarExcusa(excusa);
 
         List<Prontuario> prontuarios = AdministradorProntuarios.getInstance().getProntuarios();
         
         assertFalse(prontuarios.isEmpty());
-        
         Prontuario generado = prontuarios.get(0);
         assertEquals(empleado, generado.getEmpleado());
         assertTrue(generado.getExcusa().getMensaje().contains("oveja ninja"));
+        
     }
 
 

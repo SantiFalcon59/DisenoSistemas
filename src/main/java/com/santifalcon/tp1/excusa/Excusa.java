@@ -10,7 +10,6 @@ public class Excusa implements IExcusa {
 	private Empleado empleado;
 	private String mensaje;
 	private TipoExcusa tipoExcusa;
-	private ManejadorExcusas procesador;
 	
 	public Excusa(Empleado empleado,String mensaje, TipoExcusa tipoExcusa) {
 		this.empleado = empleado;
@@ -42,13 +41,7 @@ public class Excusa implements IExcusa {
 		return this.tipoExcusa.puedeSerManejadaPor(manejadorExcusas);
 	}
 	
-	public ManejadorExcusas getProcesadoPor() {
-		return this.procesador;
-	}
-	
-	public void setProcesadoPor(ManejadorExcusas me) {
-		this.procesador = me;
-	}
+
 
 	@Override
 	public String[] getEmailContenido(Empleado empleado) {
