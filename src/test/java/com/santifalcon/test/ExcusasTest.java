@@ -55,46 +55,46 @@ public class ExcusasTest {
 
     @Test
     void testRecepcionistaAceptaExcusaTrivial() {
-    	Excusa excusa = empleado.generarExcusa("me quedé dormido", new TipoTrivialExcusa(), manejadoresDeExcusas);
+    	Excusa excusa = empleado.presentarExcusa("me quedé dormido", new TipoTrivialExcusa(), manejadoresDeExcusas);
     	verify(recepcionista, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testSupervisorProcesaExcusaModerada() {
-     Excusa excusa = empleado.generarExcusa("se cortó la luz", new TipoCorteLuzExcusa(), manejadoresDeExcusas);
+     Excusa excusa = empleado.presentarExcusa("se cortó la luz", new TipoCorteLuzExcusa(), manejadoresDeExcusas);
  		verify(supervisor, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testGerenteProcesaExcusaCompleja() {
-        Excusa excusa = empleado.generarExcusa("una paloma robó mi bicicleta", new TipoComplejaExcusa(),manejadoresDeExcusas);
+        Excusa excusa = empleado.presentarExcusa("una paloma robó mi bicicleta", new TipoComplejaExcusa(),manejadoresDeExcusas);
     	verify(gerente, times(1)).manejarExcusa(excusa);
     }
     
     @Test
     void testRecepcionistaRechazaExcusaModeradaYLaProcesaElSupervisor() {
-    	Excusa excusa= empleado.generarExcusa( "tuve que cuidar a un familiar", new TipoCuidarFamiliarExcusa(),manejadoresDeExcusas);
+    	Excusa excusa= empleado.presentarExcusa( "tuve que cuidar a un familiar", new TipoCuidarFamiliarExcusa(),manejadoresDeExcusas);
     	verify(supervisor, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testSupervisorModoVagoNoProcesaYLaProcesaElGerente() {
         supervisor.modoVago();
-       Excusa excusa = empleado.generarExcusa("se cortó la luz", new TipoCorteLuzExcusa(),manejadoresDeExcusas);
+       Excusa excusa = empleado.presentarExcusa("se cortó la luz", new TipoCorteLuzExcusa(),manejadoresDeExcusas);
    	verify(rechazador, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testSupervisorModoProductivoEvaluaYProcesa() {
         supervisor.modoProductivo();
-       Excusa excusa= empleado.generarExcusa("tuve que cuidar a un familiar", new TipoCuidarFamiliarExcusa(),manejadoresDeExcusas);
+       Excusa excusa= empleado.presentarExcusa("tuve que cuidar a un familiar", new TipoCuidarFamiliarExcusa(),manejadoresDeExcusas);
    	verify(supervisor, times(1)).manejarExcusa(excusa);
     }
 
     @Test
     void testCEOProcesaExcusaInverosimilYGeneraProntuarioConObservers() {
 
-       Excusa excusa = empleado.generarExcusa("una oveja ninja me secuestró", new TipoInverosimilExcusa(),manejadoresDeExcusas);
+       Excusa excusa = empleado.presentarExcusa("una oveja ninja me secuestró", new TipoInverosimilExcusa(),manejadoresDeExcusas);
        verify(ceo, times(1)).manejarExcusa(excusa);
 
         List<Prontuario> prontuarios = AdministradorProntuarios.getInstance().getProntuarios();

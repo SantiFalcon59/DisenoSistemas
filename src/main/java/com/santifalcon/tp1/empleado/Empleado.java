@@ -1,8 +1,8 @@
 package com.santifalcon.tp1.empleado;
 
-import com.santifalcon.tp1.empleado.encargado.lineaencargados.LineaDeManejadoresDeExcusas;
+import com.santifalcon.tp1.empleado.encargado.lineaencargados.ILineaDeManejadoresDeExcusas;
 import com.santifalcon.tp1.excusa.Excusa;
-import com.santifalcon.tp1.excusa.tipoexcusa.TipoExcusa;
+import com.santifalcon.tp1.excusa.tipoexcusa.ITipoExcusa;
 
 public class Empleado implements IEmpleado {
 
@@ -32,7 +32,7 @@ public class Empleado implements IEmpleado {
 	}
 
 	@Override
-	public Excusa generarExcusa(String motivo, TipoExcusa tipoExcusa, LineaDeManejadoresDeExcusas manejadores) {
+	public Excusa presentarExcusa(String motivo, ITipoExcusa tipoExcusa, ILineaDeManejadoresDeExcusas manejadores) {
 		Excusa excusa = new Excusa(this, motivo, tipoExcusa);
 		manejadores.manejarExcusa(excusa);
 		return excusa;

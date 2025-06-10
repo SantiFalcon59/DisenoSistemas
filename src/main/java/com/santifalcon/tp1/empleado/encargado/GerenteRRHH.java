@@ -1,5 +1,6 @@
 package com.santifalcon.tp1.empleado.encargado;
 
+
 public class GerenteRRHH extends Encargado {
 
 	public GerenteRRHH(String nombre, String email, int legajo) {
@@ -31,6 +32,8 @@ public class GerenteRRHH extends Encargado {
 	public boolean isCEO() {
 		return false;
 	}
+
+
 
 
 }

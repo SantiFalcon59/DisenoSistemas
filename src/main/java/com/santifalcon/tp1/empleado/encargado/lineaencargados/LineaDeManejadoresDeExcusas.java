@@ -1,6 +1,6 @@
 package com.santifalcon.tp1.empleado.encargado.lineaencargados;
 
-import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.interfaces.IExcusa;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
 
 public class LineaDeManejadoresDeExcusas implements ILineaDeManejadoresDeExcusas {
@@ -23,7 +23,7 @@ public class LineaDeManejadoresDeExcusas implements ILineaDeManejadoresDeExcusas
         nuevo.setSiguiente(manejadorFinal);
     }
 
-    public void manejarExcusa(Excusa excusa) {
+    public void manejarExcusa(IExcusa excusa) {
         manejadorInicial.manejarExcusa(excusa);
     }
 }

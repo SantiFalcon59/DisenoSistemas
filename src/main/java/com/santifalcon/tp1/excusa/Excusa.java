@@ -1,17 +1,19 @@
 package com.santifalcon.tp1.excusa;
-import com.santifalcon.tp1.empleado.Empleado;
+
+
+import com.santifalcon.tp1.empleado.IEmpleado;
 import com.santifalcon.tp1.empleado.encargado.Encargado;
 import com.santifalcon.tp1.excusa.interfaces.IExcusa;
 import com.santifalcon.tp1.excusa.interfaces.ManejadorExcusas;
-import com.santifalcon.tp1.excusa.tipoexcusa.TipoExcusa;
+import com.santifalcon.tp1.excusa.tipoexcusa.ITipoExcusa;
 
 public class Excusa implements IExcusa {
 
-	private Empleado empleado;
+	private IEmpleado empleado;
 	private String mensaje;
-	private TipoExcusa tipoExcusa;
+	private ITipoExcusa tipoExcusa;
 	
-	public Excusa(Empleado empleado,String mensaje, TipoExcusa tipoExcusa) {
+	public Excusa(IEmpleado empleado,String mensaje, ITipoExcusa tipoExcusa) {
 		this.empleado = empleado;
 		this.tipoExcusa = tipoExcusa;
 		this.mensaje = mensaje;
@@ -24,15 +26,16 @@ public class Excusa implements IExcusa {
 	
 	
 	@Override
-	public Empleado getEmpleado() {
+	public IEmpleado getEmpleado() {
 		return this.empleado;
 	}
 	
+	@Override
 	public String getMensaje() {
 		return this.mensaje;
 	}
 	
-	public TipoExcusa getTipoExcusa() {
+	public ITipoExcusa getTipoExcusa() {
 		return this.tipoExcusa;
 	}
 	
@@ -44,7 +47,7 @@ public class Excusa implements IExcusa {
 
 
 	@Override
-	public String[] getEmailContenido(Empleado empleado) {
+	public String[] getEmailContenido(IEmpleado empleado) {
 		return this.tipoExcusa.getEmailContenido(empleado);
 	}
 	

@@ -1,9 +1,10 @@
 package com.santifalcon.tp1.empleado.encargado;
 
 import com.santifalcon.tp1.EmailSender;
-import com.santifalcon.tp1.excusa.Excusa;
+import com.santifalcon.tp1.excusa.interfaces.IExcusa;
 import com.santifalcon.tp1.prontuario.AdministradorProntuarios;
 import com.santifalcon.tp1.prontuario.Prontuario;
+import com.santifalcon.tp1.prontuario.interfaces.IProntuario;
 import com.santifalcon.tp1.prontuario.interfaces.Observer;
 
 public class CEO extends Encargado implements Observer {
@@ -16,7 +17,7 @@ public class CEO extends Encargado implements Observer {
 
 
 	@Override
-	public void update(Prontuario prontuario) {
+	public void update(IProntuario prontuario) {
 		new EmailSender().enviarEmail(prontuario.getEncargado().getEmail(),this.getEmail(),"nuevo prontario", "prontuario para: " + prontuario.getEmpleado().getNombre());
 	}
 
@@ -56,11 +57,12 @@ public class CEO extends Encargado implements Observer {
 
 
 	@Override
-	public void realizarAccion(Excusa excusa) {
+	public void realizarAccion(IExcusa excusa) {
 		this.enviarEmail(getEmail(), excusa.getEmpleado().getEmail(), "respuesta", "aprobado por creatividad");
 		Prontuario prontuario = new Prontuario(excusa.getEmpleado(), this, excusa);
 		AdministradorProntuarios.getInstance().agregarProntuario(prontuario);
 	}
+
 
 
 
